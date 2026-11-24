@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA | Smart City</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">N</div>
+                <div>
+                    <h2>NEXORA</h2>
+                    <span>SMART CITY</span>
+                </div>
+            </div>
+
+            <div class="nav-label">MAIN MENU</div>
+
+            <nav>
+                <a href="#overview" class="nav-link active">
+                    <span>◫</span> Overview
+                </a>
+                <a href="#services" class="nav-link">
+                    <span>⌘</span> City Services
+                </a>
+                <a href="#mobility" class="nav-link">
+                    <span>⇄</span> Smart Mobility
+                </a>
+                <a href="#environment" class="nav-link">
+                    <span>◉</span> Environment
+                </a>
+                <a href="#energy" class="nav-link">
+                    <span>ϟ</span> Energy
+                </a>
+            </nav>
+
+            <div class="nav-label">CITY INFORMATION</div>
+
+            <nav>
+                <a href="#city-map" class="nav-link">
+                    <span>⌖</span> City Map
+                </a>
+                <a href="#updates" class="nav-link">
+                    <span>◷</span> City Updates
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="city-status">
+                    <div class="status-dot"></div>
+                    <div>
+                        <strong>All systems online</strong>
+                        <small>City network operational</small>
+                    </div>
+                </div>
+
+                <div class="profile">
+                    <div class="avatar">NC</div>
+                    <div>
+                        <strong>City Control</strong>
+                        <small>Administrator</small>
+                    </div>
+                    <span class="profile-dots">•••</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content" id="overview">
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+                <div class="breadcrumb">
+                    <span>Workspace</span> / <strong>City Overview</strong>
+                </div>
+
+                <div class="topbar-right">
+                    <div class="live-badge">
+                        <span class="status-dot"></span> LIVE SYSTEM
+                    </div>
+                    <button class="icon-button" id="notificationBtn" title="Notifications">♧</button>
+                    <div class="date-display" id="dateDisplay"></div>
+                </div>
+            </header>
+
+            <!-- WELCOME -->
+            <section class="welcome">
+                <div>
+                    <span class="eyebrow">CITY INTELLIGENCE PLATFORM</span>
+                    <h1>Building a smarter <span>tomorrow.</span></h1>
+                    <p>Monitor, manage, and improve the city — all from one connected dashboard.</p>
+                </div>
+                <div class="welcome-decoration">
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+                    <div class="planet">✦</div>
+                </div>
+            </section>
+
+            <!-- STAT CARDS -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-icon blue">⌖</span>
+                        <span class="trend positive">↑ 8.2%</span>
+                    </div>
+                    <p class="stat-label">Population</p>
+                    <h2>284,590</h2>
+                    <p class="stat-foot">Residents across the city</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-icon green">ϟ</span>
+                        <span class="trend positive">↑ 12.4%</span>
+                    </div>
+                    <p class="stat-label">Renewable Energy</p>
+                    <h2>76.8<span class="unit">%</span></h2>
+                    <p class="stat-foot">Clean energy contribution</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-icon purple">⇄</span>
+                        <span class="trend positive">↑ 5.6%</span>
+                    </div>
+                    <p class="stat-label">Public Transport</p>
+                    <h2>92.4<span class="unit">%</span></h2>
+                    <p class="stat-foot">Efficiency score</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-icon orange">◉</span>
+                        <span class="trend positive">↓ 3.1%</span>
+                    </div>
+                    <p class="stat-label">Air Quality Index</p>
+                    <h2>42 <span class="unit">AQI</span></h2>
+                    <p class="stat-foot">Good air quality today</p>
+                </div>
+
+            </section>
+
+            <!-- CITY OVERVIEW AND MAP -->
+            <section class="middle-grid" id="city-map">
+
+                <div class="panel city-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>City Activity</h3>
+                            <p>Infrastructure activity overview</p>
+                        </div>
+                        <select id="activityFilter">
+                            <option value="week">This week</option>
+                            <option value="month">This month</option>
+                        </select>
+                    </div>
+
+                    <div class="chart-summary">
+                        <h2 id="activityValue">84.6<span>%</span></h2>
+                        <span class="chart-status">↑ 6.4% vs last period</span>
+                    </div>
+
+                    <div class="chart" id="activityChart">
+                        <div class="chart-grid">
+                            <span>100%</span>
+                            <span>75%</span>
+                            <span>50%</span>
+                            <span>25%</span>
+                            <span>0%</span>
+                        </div>
+                        <div class="chart-bars">
+                            <div class="bar-group"><div class="bar" style="height:46%"></div><span>Mon</span></div>
+                            <div class="bar-group"><div class="bar" style="height:63%"></div><span>Tue</span></div>
+                            <div class="bar-group"><div class="bar" style="height:54%"></div><span>Wed</span></div>
+                            <div class="bar-group"><div class="bar" style="height:82%"></div><span>Thu</span></div>
+                            <div class="bar-group"><div class="bar" style="height:72%"></div><span>Fri</span></div>
+                            <div class="bar-group"><div class="bar" style="height:91%"></div><span>Sat</span></div>
+                            <div class="bar-group"><div class="bar highlight" style="height:67%"></div><span>Sun</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel map-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>City Network</h3>
+                            <p>Connected infrastructure map</p>
+                        </div>
+                        <button class="small-btn" id="mapViewBtn">↗ View map</button>
+                    </div>
+
+                    <div class="city-map">
+                        <div class="map-grid"></div>
+
+                        <div class="road road-one"></div>
+                        <div class="road road-two"></div>
+                        <div class="road road-three"></div>
+                        <div class="road road-four"></div>
+                        <div class="road road-five"></div>
+
+                        <div class="building building-one"></div>
+                        <div class="building building-two"></div>
+                        <div class="building building-three"></div>
+                        <div class="building building-four"></div>
+                        <div class="building building-five"></div>
+                        <div class="building building-six"></div>
+                        <div class="building building-seven"></div>
+                        <div class="building building-eight"></div>
+                        <div class="building building-nine"></div>
+
+                        <div class="map-marker marker-one"><span>●</span></div>
+                        <div class="map-marker marker-two"><span>●</span></div>
+                        <div class="map-marker marker-three"><span>●</span></div>
+                        <div class="map-marker marker-four"><span>●</span></div>
+
+                        <div class="map-label">CENTRAL DISTRICT</div>
+
+                        <div class="map-legend">
+                            <span><i class="legend-blue"></i> Connected</span>
+                            <span><i class="legend-green"></i> Eco zone</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CITY SERVICES -->
+            <section class="panel services-panel" id="services">
+                <div class="panel-header">
+                    <div>
+                        <h3>Smart City Services</h3>
+                        <p>Real-time service availability</p>
+                    </div>
+                    <a href="#updates" class="text-link">View all services ↗</a>
+                </div>
+
+                <div class="services-grid">
+
+                    <div class="service-item">
+                        <div class="service-icon blue">⌖</div>
+                        <div class="service-info">
+                            <h4>Smart Parking</h4>
+                            <p>Parking availability</p>
+                            <div class="progress-track"><div class="progress blue-progress" style="width:72%"></div></div>
+                        </div>
+                        <div class="service-value"><strong>72%</strong><small>Available</small></div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-icon green">ϟ</div>
+                        <div class="service-info">
+                            <h4>Energy Grid</h4>
+                            <p>Grid performance</p>
+                            <div class="progress-track"><div class="progress green-progress" style="width:96%"></div></div>
+                        </div>
+                        <div class="service-value"><strong>96%</strong><small>Operational</small></div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-icon purple">⇄</div>
+                        <div class="service-info">
+                            <h4>Transit Network</h4>
+                            <p>Bus & metro coverage</p>
+                            <div class="progress-track"><div class="progress purple-progress" style="width:88%"></div></div>
+                        </div>
+                        <div class="service-value"><strong>88%</strong><small>Active</small></div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-icon orange">◉</div>
+                        <div class="service-info">
+                            <h4>Waste Management</h4>
+                            <p>Smart collection</p>
+                            <div class="progress-track"><div class="progress orange-progress" style="width:81%"></div></div>
+                        </div>
+                        <div class="service-value"><strong>81%</strong><small>Efficiency</small></div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- BOTTOM GRID -->
+            <section class="bottom-grid">
+
+                <!-- ENVIRONMENT -->
+                <div class="panel environment-panel" id="environment">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Environment</h3>
+                            <p>City sustainability metrics</p>
+                        </div>
+                        <span class="good-tag">Healthy</span>
+                    </div>
+
+                    <div class="environment-content">
+                        <div class="air-circle">
+                            <div>
+                                <strong>42</strong>
+                                <small>AQI</small>
+                            </div>
+                        </div>
+                        <div class="air-details">
+                            <h4>Air Quality</h4>
+                            <span class="good-text">● Good</span>
+                            <p>Air quality is safe for outdoor activities.</p>
+                        </div>
+                    </div>
+
+                    <div class="environment-metrics">
+                        <div>
+                            <span>CO₂ Level</span>
+                            <strong>410 <small>ppm</small></strong>
+                        </div>
+                        <div>
+                            <span>Green Cover</span>
+                            <strong>38.2<small>%</small></strong>
+                        </div>
+                    </div>
+        </div>
+
+                <!-- ENERGY -->
+                <div class="panel energy-panel" id="energy">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Energy Consumption</h3>
+                            <p>Today's city energy usage</p>
+                        </div>
+                        <span class="good-tag">Optimized</span>
+                    </div>
+
+                    <div class="energy-main">
+                        <div class="energy-number">
+                            <h2>2,840 <span>MW</span></h2>
+                            <p>Current consumption</p>
+                        </div>
+                        <div class="energy-visual">
+                            <div class="energy-ring">
+                                <div class="ring-inner">
+                                    <span>76.8%</span>
+                                    <small>Renewable</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="energy-legend">
+                        <span><i class="green-dot"></i> Renewable energy</span>
+                        <span><i class="gray-dot"></i> Traditional energy</span>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- CITY UPDATES -->
+            <section class="panel updates-panel" id="updates">
+                <div class="panel-header">
+                    <div>
+                        <h3>City Updates</h3>
+                        <p>Latest infrastructure activity</p>
+                    </div>
+                    <span class="live-badge"><span class="status-dot"></span> LIVE</span>
+                </div>
+
+                <div class="updates-list">
+                    <div class="update-item">
+                        <div class="update-icon green">✓</div>
+                        <div class="update-content">
+                            <strong>Solar grid optimization completed</strong>
+                            <p>Renewable energy network · Central District</p>
+                        </div>
+                        <span class="update-time">2 min ago</span>
+                    </div>
+
+                    <div class="update-item">
+                        <div class="update-icon blue">⇄</div>
+                        <div class="update-content">
+                            <strong>Transit route updated</strong>
+                            <p>Smart mobility · North Avenue</p>
+                        </div>
+                        <span class="update-time">18 min ago</span>
+                    </div>
+
+                    <div class="update-item">
+                        <div class="update-icon orange">◉</div>
+                        <div class="update-content">
+                            <strong>Waste collection scheduled</strong>
+                            <p>City sanitation · Green Zone</p>
+                        </div>
+                        <span class="update-time">35 min ago</span>
+                    </div>
+
+                    <div class="update-item">
+                        <div class="update-icon purple">⌖</div>
+                        <div class="update-content">
+                            <strong>Parking system refreshed</strong>
+                            <p>Smart parking · Downtown</p>
+                        </div>
+                        <span class="update-time">1 hour ago</span>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <span>© 2026 NEXORA Smart City</span>
+                <span>Designed for a sustainable future <b>✦</b></span>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
